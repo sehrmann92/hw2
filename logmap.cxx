@@ -33,12 +33,13 @@ int main()
 	}
 	out.close();	
 	
-	//Plot in Gnuplot erstellen und speichern
+	//Plotbefehle in externer Datei speichern
 	outplot<<"set terminal jpeg"<<endl;
 	outplot<<"set output \"Plot.jpeg\" "<<endl;
 	outplot<<"plot \"Daten.txt\" u 1:2 w dots"<<endl;
 	outplot.close();
 	
+	//Gnuplot aufrufen und ausführen
 	system("gnuplot  \"Daten_plot.txt\" ");
 	return 0;
 }
